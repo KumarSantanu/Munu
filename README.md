@@ -2,7 +2,7 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/KumarSantanu/Winzio.git
+git clone https://github.com/KumarSantanu/Munu.git
 
 # Open in Android Studio
 File > Open > Select cloned directory
