@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "app.santanu.lovemunu"
+    namespace = "app.santanu.love.munu"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "app.santanu.lovemunu"
+        applicationId = "app.santanu.love.munu"
         minSdk = 28
         targetSdk = 35
         versionCode = 1

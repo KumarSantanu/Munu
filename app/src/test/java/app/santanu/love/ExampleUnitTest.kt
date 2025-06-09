@@ -1,4 +1,4 @@
-package app.santanu.lovemunu
+package app.santanu.love
 
 import org.junit.Test
 

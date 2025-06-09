@@ -1,4 +1,4 @@
-package app.santanu.lovemunu
+package app.santanu.love.munu
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
