@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Munu</string>
+    <string name="app_tag_line">To love, to live, to Munu.</string>
+    <string name="app_copyright">Made with ❤️ — © 2025 Munu. All rights reserved.</string>
+
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_conditions">Terms &amp; Conditions</string>
+
+    <string name="write_me_note">Write me a note 💌</string>
+    <string name="share">Share</string>
 </resources>

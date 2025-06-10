@@ -52,6 +52,7 @@ dependencies {
 
     implementation(libs.timber)
     implementation(libs.gson)
+    implementation(libs.squareup.picasso)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
