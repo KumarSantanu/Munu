@@ -1,9 +1,14 @@
-package app.santanu.love.munu
+package app.santanu.love.munu.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import app.santanu.love.munu.Global
+import app.santanu.love.munu.R
+import app.santanu.love.munu.ui.quotes.QuotesActivity
+import app.santanu.love.munu.util.ChromeTabUtil
 import app.santanu.love.munu.util.Method
 import com.squareup.picasso.Picasso
 
@@ -14,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var writeNoteTextView: AppCompatTextView
     private lateinit var privacyTextView: AppCompatTextView
     private lateinit var conditionTextView: AppCompatTextView
+    private lateinit var viewMoreQuotesTextView: AppCompatTextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         initView()
         setBigImage()
         shareApp()
+        viewMoreQuotes()
         writeNote()
         privacyPolicy()
         termConditions()
@@ -33,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         writeNoteTextView = findViewById(R.id.actv_write_note)
         privacyTextView = findViewById(R.id.actv_privacy_policy)
         conditionTextView = findViewById(R.id.actv_term_condition)
+        viewMoreQuotesTextView = findViewById(R.id.actv_view_more_quotes)
     }
 
     private fun setBigImage() {
@@ -48,6 +56,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun viewMoreQuotes() {
+        viewMoreQuotesTextView.setOnClickListener {
+            val moreQuoteIntent = Intent(this@MainActivity, QuotesActivity::class.java)
+            startActivity(moreQuoteIntent)
+        }
+    }
+
     private fun writeNote() {
         writeNoteTextView.setOnClickListener {
             Method(this@MainActivity).openAppInPlayStore(this.packageName)
@@ -56,13 +71,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun privacyPolicy() {
         privacyTextView.setOnClickListener {
-
+            ChromeTabUtil(this@MainActivity).openCustomTab(
+                Global.PRIVACY_URL,
+                getColor(R.color.lightPeach)
+            )
         }
     }
 
     private fun termConditions() {
         conditionTextView.setOnClickListener {
-
+            ChromeTabUtil(this@MainActivity).openCustomTab(
+                Global.TERM_AND_CONDITION_URL,
+                getColor(R.color.lightPeach)
+            )
         }
     }
 

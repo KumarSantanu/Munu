@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    implementation(libs.androidx.browser)
     implementation(libs.androidx.splashscreen)
 
     implementation(libs.androidx.activity)

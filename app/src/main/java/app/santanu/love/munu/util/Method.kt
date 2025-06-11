@@ -7,9 +7,23 @@ import android.net.Uri
 
 class Method(private val ctx: Context) {
 
+    companion object {
+        private const val WHATSAPP_PACKAGE = "com.whatsapp"
+    }
+
     fun shareMore(shareContent: String) {
         val shareIntent = createShareIntent(shareContent)
         launchShareIntent(shareIntent)
+    }
+
+
+    fun shareViaWhatsapp(shareContent: String) {
+        val whatsappIntent = createShareIntent(shareContent).apply {
+            setPackage(WHATSAPP_PACKAGE)
+        }
+        if (isAppAvailable(whatsappIntent)) {
+            launchShareIntent(whatsappIntent)
+        }
     }
 
     fun openAppInPlayStore(packageName: String) {
@@ -51,5 +65,10 @@ class Method(private val ctx: Context) {
         } catch (e: ActivityNotFoundException) {
             e.printStackTrace()
         }
+    }
+
+    private fun isAppAvailable(intent: Intent): Boolean {
+        val resolveInfo = ctx.packageManager.resolveActivity(intent, 0)
+        return resolveInfo != null
     }
 }

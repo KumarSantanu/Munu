@@ -7,5 +7,15 @@
     <string name="terms_conditions">Terms &amp; Conditions</string>
 
     <string name="write_me_note">Write me a note 💌</string>
+    <string name="back">Back</string>
     <string name="share">Share</string>
+    <string name="quotes">Quotes</string>
+    <string name="view_more_quotes">View More Quotes</string>
+
+    <string name="quote_home">From this moment, I don’t just want to love you—I want to marry you, grow with you, and make every tomorrow ours.</string>
+    <string name="quotes_activity_title">Our Favorite Quotes</string>
+
+    <string name="quote_copied">Quote Copied…</string>
+    <string name="copy">Copy</string>
+    <string name="whatsapp">Whatsapp</string>
 </resources>
