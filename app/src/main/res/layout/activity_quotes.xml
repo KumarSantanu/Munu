@@ -26,7 +26,7 @@
             android:focusable="true"
             android:padding="10dp"
             android:src="@drawable/ic_arrow_small_left"
-            android:tint="@color/indianRed" />
+            android:tint="@color/rose_500" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
@@ -36,17 +36,16 @@
             android:paddingStart="10dp"
             android:paddingEnd="5dp"
             android:text="@string/quotes_activity_title"
-            android:textColor="@color/indianRed"
-            android:textSize="18sp"
-            app:fontFamily="@font/roboto_medium" />
-
+            android:textColor="@color/rose_600"
+            android:textSize="@dimen/title_text_size"
+            app:fontFamily="@font/roboto" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_quotes"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_quotes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_quotes" />
 
 </LinearLayout>

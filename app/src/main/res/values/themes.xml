@@ -31,4 +31,37 @@
         <item name="windowSplashScreenAnimationDuration">2000</item>
         <item name="postSplashScreenTheme">@style/Theme.Munu</item>
     </style>
+
+    <style name="CircleImageShape" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="QuoteActionButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:backgroundTint">@color/rose_100</item>
+        <item name="android:textColor">@color/rose_700</item>
+        <item name="android:textSize">@dimen/quote_button_text_size</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="iconPadding">8dp</item>
+        <item name="iconSize">@dimen/quote_action_icon_size</item>
+        <item name="iconGravity">textStart</item>
+        <item name="rippleColor">@color/rose_200</item>
+    </style>
+
+    <style name="HomeBottomMenuButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/gray_700</item>
+        <item name="android:textSize">@dimen/home_bottom_button_text_size</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="iconPadding">10dp</item>
+        <item name="iconSize">14dp</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconTint">@color/rose_500</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="rippleColor">@color/rose_200</item>
+    </style>
 </resources>

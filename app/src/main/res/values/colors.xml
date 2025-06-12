@@ -6,6 +6,24 @@
     <color name="lightPeach">#F1E0D8</color>
     <color name="indianRed">#D94A4A</color>
     <color name="deepRose">#C0392B</color>
-    <color name="whatsappColor">#25D366</color>
-    <color name="maroon">#A93226</color>
+
+    <color name="rose_50">#fff1f2</color>
+    <color name="rose_100">#ffe4e6</color>
+    <color name="rose_200">#fecdd3</color>
+    <color name="rose_500">#f43f5e</color>
+    <color name="rose_600">#e11d48</color>
+    <color name="rose_700">#be123c</color>
+
+    <color name="gray_100">#f3f4f6</color>
+    <color name="gray_400">#9ca3af</color>
+    <color name="gray_500">#6b7280</color>
+    <color name="gray_600">#4b5563</color>
+    <color name="gray_700">#374151</color>
+    <color name="gray_800">#1f2937</color>
+
+    <color name="green_600">#059669</color>
+
+    <color name="dev_title">#1f2937</color>               <!-- gray-800 -->
+    <color name="dev_subtitle">#2563eb</color>            <!-- blue-600 -->
+    <color name="dev_description">#374151</color>          <!-- gray-700 -->
 </resources>

@@ -2,24 +2,26 @@ package app.santanu.love.munu.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import app.santanu.love.munu.Global
 import app.santanu.love.munu.R
+import app.santanu.love.munu.required.CheckBeforeRelease
 import app.santanu.love.munu.ui.quotes.QuotesActivity
 import app.santanu.love.munu.util.ChromeTabUtil
 import app.santanu.love.munu.util.Method
+import com.google.android.material.button.MaterialButton
 import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var shareImageView: AppCompatImageView
     private lateinit var bigImageView: AppCompatImageView
-    private lateinit var writeNoteTextView: AppCompatTextView
-    private lateinit var privacyTextView: AppCompatTextView
-    private lateinit var conditionTextView: AppCompatTextView
-    private lateinit var viewMoreQuotesTextView: AppCompatTextView
+    private lateinit var privacyButton: MaterialButton
+    private lateinit var conditionButton: MaterialButton
+    private lateinit var viewMoreQuotesTextView: MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setBigImage()
         shareApp()
         viewMoreQuotes()
-        writeNote()
+        setDevPage()
         privacyPolicy()
         termConditions()
     }
@@ -37,10 +39,9 @@ class MainActivity : AppCompatActivity() {
     private fun initView() {
         shareImageView = findViewById(R.id.aciv_share_app)
         bigImageView = findViewById(R.id.aciv_big_image)
-        writeNoteTextView = findViewById(R.id.actv_write_note)
-        privacyTextView = findViewById(R.id.actv_privacy_policy)
-        conditionTextView = findViewById(R.id.actv_term_condition)
-        viewMoreQuotesTextView = findViewById(R.id.actv_view_more_quotes)
+        privacyButton = findViewById(R.id.mb_home_privacy_policy)
+        conditionButton = findViewById(R.id.mb_home_term_condition)
+        viewMoreQuotesTextView = findViewById(R.id.mb_view_more_quotes)
     }
 
     private fun setBigImage() {
@@ -63,14 +64,37 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun writeNote() {
-        writeNoteTextView.setOnClickListener {
-            Method(this@MainActivity).openAppInPlayStore(this.packageName)
+    private fun setDevPage() {
+        val includeDevPage = findViewById<View>(R.id.include_dev)
+        val writeNotButton = includeDevPage.findViewById<MaterialButton>(R.id.mb_write_me_note)
+        val appVersionTextView =
+            includeDevPage.findViewById<AppCompatTextView>(R.id.actv_dev_app_version)
+
+        val appLastUpdateTextView =
+            includeDevPage.findViewById<AppCompatTextView>(R.id.actv_dev_app_last_update)
+
+        appVersionTextView.text = getAppVersion()
+        appLastUpdateTextView.text = getLatUpdate()
+
+        writeNotButton.setOnClickListener {
+            writeNote()
         }
     }
 
+    private fun writeNote() {
+        Method(this@MainActivity).openAppInPlayStore(this.packageName)
+    }
+
+    private fun getAppVersion(): String {
+        return "Version ${CheckBeforeRelease.APP_VERSION}"
+    }
+
+    private fun getLatUpdate(): String {
+        return "Last Updated: ${CheckBeforeRelease.APP_LAST_UPDATE}"
+    }
+
     private fun privacyPolicy() {
-        privacyTextView.setOnClickListener {
+        privacyButton.setOnClickListener {
             ChromeTabUtil(this@MainActivity).openCustomTab(
                 Global.PRIVACY_URL,
                 getColor(R.color.lightPeach)
@@ -79,7 +103,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun termConditions() {
-        conditionTextView.setOnClickListener {
+        conditionButton.setOnClickListener {
             ChromeTabUtil(this@MainActivity).openCustomTab(
                 Global.TERM_AND_CONDITION_URL,
                 getColor(R.color.lightPeach)

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_image"
+        android:layout_width="@dimen/dev_avatar_size"
+        android:layout_height="@dimen/dev_avatar_size"
+        android:background="@color/rose_500"
+        android:scaleType="fitXY"
+        android:src="@drawable/developer"
+        app:shapeAppearanceOverlay="@style/CircleImageShape" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="0dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/dev_name"
+            android:textColor="@color/dev_title"
+            android:textSize="@dimen/dev_title_size"
+            android:textStyle="bold"
+            app:fontFamily="@font/roboto_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/dev_sub_title"
+            android:textColor="@color/dev_subtitle"
+            android:textSize="@dimen/dev_subtitle_size"
+            android:textStyle="bold"
+            app:fontFamily="@font/roboto" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="14dp"
+            android:text="@string/dev_dec"
+            android:textColor="@color/dev_description"
+            android:textSize="@dimen/dev_description_size"
+            app:fontFamily="@font/roboto" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mb_write_me_note"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/rose_200"
+            android:contentDescription="@string/write_me_note"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingHorizontal="16dp"
+            android:text="@string/write_me_note"
+            android:textColor="@color/rose_700"
+            android:textSize="@dimen/home_bottom_button_text_size"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_edit"
+            app:iconGravity="textStart"
+            app:iconPadding="14dp"
+            app:iconSize="18dp"
+            app:iconTint="@color/rose_700"
+            app:rippleColor="@color/gray_100" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray_100" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_dev_app_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dev_description"
+                android:textSize="@dimen/dev_version_size"
+                app:fontFamily="@font/roboto"
+                tools:text="@string/app_version" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_dev_app_last_update"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textColor="@color/dev_description"
+                android:textSize="@dimen/dev_version_size"
+                app:fontFamily="@font/roboto"
+                tools:text="@string/app_last_update" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

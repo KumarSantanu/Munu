@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Munu</string>
     <string name="app_tag_line">To love, to live, to Munu.</string>
-    <string name="app_copyright">Made with ❤️ — © 2025 Munu. All rights reserved.</string>
+    <string name="app_copyright_credit">Made with ❤️ by Santanu Maity</string>
+    <string name="app_copyright">© 2025 Munu. All rights reserved.</string>
 
     <string name="privacy_policy">Privacy Policy</string>
     <string name="terms_conditions">Terms &amp; Conditions</string>
@@ -18,4 +19,15 @@
     <string name="quote_copied">Quote Copied…</string>
     <string name="copy">Copy</string>
     <string name="whatsapp">Whatsapp</string>
+
+    <string name="copy_quote">Copy Quote</string>
+    <string name="share_on_WhatsApp">Share on WhatsApp</string>
+    <string name="share_quote">Share Quote</string>
+
+    <string name="about_us">About Us</string>
+    <string name="dev_name">Santanu Maity</string>
+    <string name="dev_sub_title">Mobile App Developers</string>
+    <string name="dev_dec">Passionate developers dedicated to creating meaningful digital experiences that bring people closer together through technology and love.</string>
+    <string name="app_version">Version 2.1.0</string>
+    <string name="app_last_update">Last Updated: Jun 2025</string>
 </resources>

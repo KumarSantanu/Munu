@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import app.santanu.love.munu.R
 import app.santanu.love.munu.data.model.Quotes
+import com.google.android.material.button.MaterialButton
 
 class QuotesAdapter(
     private val quotesList: List<Quotes>,
@@ -17,9 +18,9 @@ class QuotesAdapter(
 
     inner class QuotesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val quoteText: AppCompatTextView = itemView.findViewById(R.id.actv_quotes_text)
-        val btnCopy: AppCompatTextView = itemView.findViewById(R.id.actv_copy_quotes)
-        val btnWaShare: AppCompatTextView = itemView.findViewById(R.id.actv_whatsapp_share_quotes)
-        val btnShare: AppCompatTextView = itemView.findViewById(R.id.actv_share_quotes)
+        val btnCopy: MaterialButton = itemView.findViewById(R.id.btn_copy_quotes)
+        val btnWaShare: MaterialButton = itemView.findViewById(R.id.btn_whatsapp_share_quotes)
+        val btnShare: MaterialButton = itemView.findViewById(R.id.btn_share_quotes)
     }
 
     override fun onCreateViewHolder(
