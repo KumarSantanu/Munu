@@ -6,6 +6,12 @@
     @com.google.gson.annotations.SerializedName <fields>;
 }
 
+# ✅ OkHttp/OkIO (Avoids networking issues)
+-keep class okhttp3.** { *; }
+-dontwarn okhttp3.**
+-keep class okio.** { *; }
+-dontwarn okio.**
+
 # ✅ Firebase & Google Services (Ensures Firebase works properly)
 -keep class com.google.firebase.** { *; }
 -keep class com.google.android.gms.** { *; }

@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         termConditions()
 
         lifecycleScope.launch {
-            delay(200)
+            delay(500)
             OneSignal.Notifications.requestPermission(true)
         }
     }
