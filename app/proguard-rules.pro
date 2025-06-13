@@ -1,21 +1,24 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# ✅ Gson (Ensures JSON serialization works)
+-keep class com.google.gson.** { *; }
+-keep class * implements com.google.gson.TypeAdapter { *; }
+-keepclassmembers class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# ✅ Firebase & Google Services (Ensures Firebase works properly)
+-keep class com.google.firebase.** { *; }
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.firebase.**
+-dontwarn com.google.android.gms.**
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# ✅ Coroutines (Prevents crashes in async calls)
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation { *; }
+
+# ✅ Keep annotations (Required for reflection-based libraries)
+-keepattributes *Annotation*
+
+# ✅ OneSignal (Prevents push notification issues)
+-keep class com.onesignal.** { *; }
+-dontwarn com.onesignal.**
+-keep class com.onesignal.notifications.** { *; }

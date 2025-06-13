@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "612677427794",
+    "project_id": "munu-dev-santanu",
+    "storage_bucket": "munu-dev-santanu.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612677427794:android:43f9b7fec776e3f658f58b",
+        "android_client_info": {
+          "package_name": "app.santanu.love.munu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNlfhT12ZRF36dABBbH0O1Oosc9soaFdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

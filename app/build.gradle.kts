@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.service)
 }
 
 android {
@@ -19,17 +20,21 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            isCrunchPngs = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
+    
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
@@ -48,12 +53,22 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+    implementation(libs.androidx.viewpager2)
+    implementation(libs.androidx.recyclerview)
+
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
 
     implementation(libs.timber)
     implementation(libs.gson)
+
+    implementation(platform(libs.firbase.bom))
+    implementation(libs.firebase.analytics)
+
+    implementation(libs.onesignal)
+
     implementation(libs.squareup.picasso)
+    implementation(libs.tbuonomo.dotsindicator)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
