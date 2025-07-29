@@ -1,7 +1,10 @@
 [versions]
-agp = "8.10.1"
+agp = "8.11.1"
 kotlin = "2.0.21"
-googleService = "4.4.2"
+ksp = "2.0.21-1.0.28"
+googleService = "4.4.3"
+crashlyticsVersion = "3.0.5"
+
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -15,17 +18,17 @@ viewpager2 = "1.1.0"
 recyclerview = "1.4.0"
 
 splashscreen = "1.0.1"
-coroutine = "1.9.0"
+coroutine = "1.10.2"
 
 timber = "5.0.1"
-gson = "2.11.0"
+gson = "2.13.1"
 browser = "1.8.0"
 
-firebaseBom = "33.15.0"
+firebaseBom = "34.0.0"
 onesignal = "[5.1.6, 5.1.99]"
 
-picasso = "2.8"
-dotsindicator = "5.0"
+picasso = "2.71828"
+dotsindicator = "5.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -63,5 +66,7 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-service = { id = "com.google.gms.google-services", version.ref = "googleService" }
+crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsVersion" }
 
